@@ -1,0 +1,57 @@
+name: cognition_app
+description: A cognitive growth tracking app
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"  # ✅ 使用双引号，明确版本范围 # ✅ 明确指定支持空安全的SDK版本
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # 基础依赖 - 使用明确支持空安全的版本
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.2
+  intl: ^0.19.0
+  
+  # 数据库
+  supabase_flutter: ^2.8.3
+  
+  # 工具类
+  uuid: ^4.5.1           # ✅ 支持空安全
+  flutter_dotenv: 6.0.0
+  
+  # 图表
+  fl_chart: ^0.70.2
+  
+  # AI服务
+  ai_providers: ^1.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  # 👇 添加这一行
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.3.0
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/splash/logo.png
+  android: true
+  ios: true
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - .env
+    - assets/icon/ 
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "app_icon.png"  # ✅ 直接使用根目录的文件名
+  min_sdk_android: 21
+  remove_alpha_ios: true
